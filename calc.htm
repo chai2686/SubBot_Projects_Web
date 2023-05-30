@@ -74,8 +74,8 @@
     </div>
     <div class="weight-container">
     <label for="weight">น้ำหนักตาชั่ง:</label>
-    <input type="number" id="weight1" placeholder="ป้อนค่าน้ำหนักตาชั่ง">
-    <input type="number" id="weight2" placeholder="ป้อนค่าน้ำหนักตาชั่ง">
+    <input type="number" id="weight1" placeholder="น้ำหนักตาชั่ง 1">
+    <input type="number" id="weight2" placeholder="น้ำหนักตาชั่ง 2">
     </div>
     <div class="btn-container">
       <button onclick="calculate()">คำนวณ</button>
@@ -91,7 +91,7 @@
       var quantity = document.getElementById('quantity').value;
       var weight1 = document.getElementById('weight1').value;
       var weight2 = document.getElementById('weight2').value;
-      var totalweight = +weight1 + +weight2;
+      var totalweight = parseFloat(weight1) + parseFloat(weight2);
 
       // ทำการคำนวณหรือดำเนินการต่อไปตามที่คุณต้องการ
       var avg_thick = totalweight / width / length / 0.00000785 / quantity;
