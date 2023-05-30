@@ -91,7 +91,7 @@
       var quantity = document.getElementById('quantity').value;
       var weight1 = document.getElementById('weight1').value;
       var weight2 = document.getElementById('weight2').value;
-      var totalweight = (weight1 + weight2);
+      var totalweight = +weight1 + +weight2;
 
       // ทำการคำนวณหรือดำเนินการต่อไปตามที่คุณต้องการ
       var avg_thick = totalweight / width / length / 0.00000785 / quantity;
