@@ -23,6 +23,14 @@
       padding: 10px;
       margin-bottom: 10px;
     }
+    .btn-container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .btn-container button {
+      flex-basis: 45%; /* กำหนดขนาดให้ปุ่มเป็น 45% ของพื้นที่ของคอนเทนเนอร์ */
+    }
   </style>
 </head>
 <body>
@@ -43,8 +51,10 @@
     <label for="weight">น้ำหนักตาชั่ง:</label>
     <input type="number" id="weight" placeholder="ป้อนค่าน้ำหนักตาชั่ง">
 
-    <button onclick="calculate()">คำนวณ</button>
-    <button onclick="reset()">ล้างหน้าจอ</button>
+    <div class="btn-container">
+      <button onclick="calculate()">คำนวณ</button>
+      <button onclick="reset()">ล้างหน้าจอ</button>
+    </div>
   </div>
 
   <script>
