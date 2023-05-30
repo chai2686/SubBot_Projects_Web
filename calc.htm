@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>เว็บคำนวณ</title>
+  <style>
+    body {
+      text-align: center;
+    }
+
+    .container {
+      margin: 0 auto;
+      width: 300px;
+    }
+
+    input {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>เว็บคำนวณ</h2>
+    <label for="boldness">ความหนา:</label>
+    <input type="number" id="boldness" placeholder="ป้อนค่าความหนา">
+
+    <label for="width">ความหน้ากว้าง:</label>
+    <input type="number" id="width" placeholder="ป้อนค่าความหน้ากว้าง">
+
+    <label for="length">ความยาว:</label>
+    <input type="number" id="length" placeholder="ป้อนค่าความยาว" value="6000">
+
+    <label for="quantity">ความจำนวน:</label>
+    <input type="number" id="quantity" placeholder="ป้อนค่าความจำนวน">
+
+    <label for="weight">น้ำหนักตาชั่ง:</label>
+    <input type="number" id="weight" placeholder="ป้อนค่าน้ำหนักตาชั่ง">
+
+    <button onclick="calculate()">คำนวณ</button>
+    <button onclick="reset()">ล้างหน้าจอ</button>
+  </div>
+
+  <script>
+    function calculate() {
+      var boldness = document.getElementById('boldness').value;
+      var width = document.getElementById('width').value;
+      var length = document.getElementById('length').value;
+      var quantity = document.getElementById('quantity').value;
+      var weight = document.getElementById('weight').value;
+
+      // ทำการคำนวณหรือดำเนินการต่อไปตามที่คุณต้องการ
+    }
+
+    function reset() {
+      document.getElementById('boldness').value = '';
+      document.getElementById('width').value = '';
+      document.getElementById('length').value = '6000';
+      document.getElementById('quantity').value = '';
+      document.getElementById('weight').value = '';
+    }
+  </script>
+</body>
+</html>
