@@ -99,6 +99,12 @@
       var weight2 = document.getElementById('weight2').value;
       var totalweight = parseFloat(weight1) + parseFloat(weight2);
 
+      // ทำการตรวจสอบ input ต้องไม่มีค่า null
+      if (boldness === "" || width === "" || length === "" || quantity === "" || weight1 === "" || weight2 === "") {
+        alert("กรุณากรอกข้อมูลให้ครบทุกช่อง");
+        return;
+      }
+      
       // ทำการคำนวณหรือดำเนินการต่อไปตามที่คุณต้องการ
       var avg_thick = totalweight / width / length / 0.00000785 / quantity;
       avg_thick = avg_thick.toFixed(4);
