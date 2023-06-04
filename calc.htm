@@ -97,11 +97,11 @@
       avg_thick = avg_thick.toFixed(4);
       
       // เตรียมข้อความในการบันทึกคำตอบ
-      var sizename = "เหล็กแบน " + boldness + "MM x " + width + "MM x " + length + "MM จำนวน " + quantity + " เส้น น้ำหนัก " + totalweight + " กิโลกรัม ความหนาเฉลี่ย " + avg_thick + " MM";
+      var sizename = "เหล็กแบน " + boldness + "MM x " + width + "MM x " + length + "MM";
       
       // ทำการบันทึกคำตอบด้วย http request แบบไม่ callback
       var i = document.createElement("img");
-	    i.src = "https://docs.google.com/forms/d/e/1FAIpQLSfKof3d_MUx1hjElID4s3VE1qPSMqaqP4r2Wm2QpV1-h1zO-Q/formResponse?entry.324556811=" + sizename;
+      i.src = "https://docs.google.com/forms/d/e/1FAIpQLSfKof3d_MUx1hjElID4s3VE1qPSMqaqP4r2Wm2QpV1-h1zO-Q/formResponse?entry.324556811=" + sizename + "&entry.1667848866=" + quantity + " เส้น&entry.517893373=" + totalweight + " KG&entry.778757753=" + avg_thick + "MM";
       
       // ทำต่อไปตามความต้องการ เช่น แสดงผลลัพท์หรือดำเนินการเพิ่มเติม
       alert("เหล็กแบน " + boldness + "MM x " + width + "MM x " + length + "MM จำนวน " + quantity + " เส้น น้ำหนัก " + totalweight + " กิโลกรัม ความหนาเฉลี่ย " + avg_thick + " MM");
