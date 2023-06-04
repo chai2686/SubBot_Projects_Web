@@ -81,11 +81,8 @@
       var width = document.getElementById('width').value;
       var length = document.getElementById('length').value;
       var quantity = document.getElementById('quantity').value;
-      var weight1 = document.getElementById('weight1').value;
-      var weight2 = document.getElementById('weight2').value;
-      
-      weight1 = weight1 || 0; //ถ้าน้ำหนัก 1 ไม่ได้ใส่จะมีค่า 0
- 	    weight2 = weight2 || 0; //ถ้าน้ำหนัก 2 ไม่ได้ใส่จะมีค่า 0
+      var weight1 = document.getElementById('weight1').value || 0; //ถ้าน้ำหนัก 1 ไม่ได้ใส่จะมีค่า 0
+      var weight2 = document.getElementById('weight2').value || 0; //ถ้าน้ำหนัก 2 ไม่ได้ใส่จะมีค่า 0
       
       var totalweight = parseFloat(weight1) + parseFloat(weight2);
 
