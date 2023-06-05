@@ -73,6 +73,9 @@
       <button onclick="calculate()">คำนวณ</button>
       <button onclick="reset()">ล้างหน้าจอ</button>
     </div>
+    <div class="btn-container">
+      <button onclick="viewhistory()">บันทึกจดน้ำหนัก</button>
+    </div>
   </div>
 
   <script>
@@ -119,6 +122,9 @@
       document.getElementById('weight1').value = '';
       document.getElementById('weight2').value = '';
     }
+    function goToHistory() {
+ 	    window.open("https://docs.google.com/spreadsheets/d/1IkO_AxMnh_yYFDsEV_7MAaGUCrgXptbby6et7Rt-T5w/htmlview", "_blank");
+	  }
   </script>
 </body>
 </html>
