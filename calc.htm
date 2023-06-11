@@ -20,7 +20,7 @@
 
     button {
       width: 100%;
-      padding: 10px;
+      padding: 5px;
       margin-bottom: 10px;
     }
 
@@ -70,6 +70,12 @@
     <label for="weight">KG</label>
     </div>
     <div class="btn-container">
+    <label>น้ำหนักก่อนหน้า:</label>
+    <input type="number" id="lastweight" placeholder="น้ำหนักก่อนหน้า" value="0">
+    <label for="weight">KG</label>
+    <button onclick="clearlastweight()">ล้างน้ำหนัก</button>
+    </div>
+    <div class="btn-container">
       <button onclick="calculate()">คำนวณ</button>
       <button onclick="reset()">ล้างหน้าจอ</button>
     </div>
@@ -82,12 +88,13 @@
     function calculate() {
       var boldness = document.getElementById('boldness').value;
       var width = document.getElementById('width').value;
-      var length = document.getElementById('length').value;
+      var length = document.getElementById('length').value || 6000;
       var quantity = document.getElementById('quantity').value;
       var weight1 = document.getElementById('weight1').value || 0; //ถ้าน้ำหนัก 1 ไม่ได้ใส่จะมีค่า 0
       var weight2 = document.getElementById('weight2').value || 0; //ถ้าน้ำหนัก 2 ไม่ได้ใส่จะมีค่า 0
+      var lastweight = document.getElementById('lastweight').value || 0; //ถ้าน้ำหนักก่อนหน้า ไม่ได้ใส่จะมีค่า 0
       
-      var totalweight = parseFloat(weight1) + parseFloat(weight2);
+      var totalweight = parseFloat(weight1) + parseFloat(weight2) - parseFloat(lastweight);
 
       // ทำการตรวจสอบ input ต้องไม่มีค่า null
       if (boldness === "" || width === "" || length === "" || quantity === "") {
@@ -98,6 +105,9 @@
       // ทำการคำนวณหรือดำเนินการต่อไปตามที่คุณต้องการ
       var avg_thick = totalweight / width / length / 0.00000785 / quantity;
       avg_thick = avg_thick.toFixed(4);
+      
+      lastweight = parseFloat(lastweight) + totalweight; //เก็บน้ำหนักล่าสุดไว้ในตัวแปรน้ำหนักก่อนหน้า
+      document.getElementById('lastweight').value = lastweight;
       
       // เตรียมข้อความในการบันทึกคำตอบ
       var sizename = "เหล็กแบน " + boldness + "MM x " + width + "MM x " + length + "MM";
@@ -124,6 +134,9 @@
     }
     function goToHistory() {
       window.open("https://docs.google.com/spreadsheets/d/1IkO_AxMnh_yYFDsEV_7MAaGUCrgXptbby6et7Rt-T5w/htmlview", "_blank");
+    }
+    function clearlastweight() {
+    	document.getElementById('lastweight').value = '0';
     }
   </script>
 </body>
