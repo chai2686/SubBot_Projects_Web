@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Reader</title>
+    <!-- Add the Instascan library -->
+    <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+</head>
+<body>
+
+    <h1>QR Code Reader</h1>
+
+    <label for="qrInput">Scan QR Code:</label>
+    <input type="text" id="qrInput" placeholder="QR Code will appear here" readonly>
+
+    <br>
+
+    <label for="textInput">Enter Text:</label>
+    <input type="text" id="textInput" placeholder="Enter text manually">
+
+    <br>
+
+    <!-- Display video feed for QR code scanning -->
+    <video id="preview"></video>
+
+    <script>
+        // Get references to text input fields
+        const qrInput = document.getElementById('qrInput');
+        const textInput = document.getElementById('textInput');
+
+        // Get reference to video element for camera feed
+        const videoElement = document.getElementById('preview');
+
+        // Create a new Instascan scanner
+        const scanner = new Instascan.Scanner({ video: videoElement });
+
+        // Add a listener for the 'scan' event
+        scanner.addListener('scan', function(content) {
+            qrInput.value = content; // Set the value of the QR input field
+        });
+
+        // Start the camera and begin scanning
+        Instascan.Camera.getCameras().then(function(cameras) {
+            if (cameras.length > 0) {
+                scanner.start(cameras[0]); // Use the first camera (you can choose a different one if available)
+            } else {
+                console.error('No cameras found.');
+            }
+        }).catch(function(e) {
+            console.error(e);
+        });
+    </script>
+
+</body>
+</html>
