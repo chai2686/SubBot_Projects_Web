@@ -92,13 +92,21 @@
         <input type="text" class="text-input" placeholder="จำนวนเส้นของท่อ">
         <div class="button-group">
             <button class="button">บันทึก</button>
-            <button onclick="clearall()" class="button">ล้างจอ</button>
+            <button onclick="clearScreen" class="button">ล้างจอ</button>
             <button class="button">ตารางสรุป</button>
         </div>
     </div>
     <script>
-        function clearall() {
-            alert('Clear Screen Function Called');
+            function clearScreen() {
+            // Reset the dropdown
+            document.querySelector('.dropdown').selectedIndex = -1;
+            
+            // Clear all radio buttons
+            document.querySelectorAll('input[type="radio"]').forEach(radio => radio.checked = false);
+            
+            // Clear the text input
+            document.querySelector('.text-input').value = '';
+            alert('ล้างหน้าจอสำเร็จ');
         }
     </script>
 
