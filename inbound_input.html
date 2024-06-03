@@ -1,0 +1,83 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blank vertical webpage for mobile phone with dropdown list, radio buttons, and text input">
+    <title>Blank Mobile Webpage</title>
+    <style>
+        /* Set the height and width to match the desired resolution */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffffff; /* White background color */
+        }
+        .container {
+            width: 100%;
+            max-width: 768px;
+            height: 100%;
+            max-height: 1280px;
+            background-color: #f0f0f0; /* Light grey background color */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .dropdown {
+            width: 300px;
+            height: 100px;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .radio-group {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 20px;
+        }
+        .radio-label {
+            margin-right: 20px;
+        }
+        .text-input {
+            width: 300px;
+            height: 60px;
+            font-size: 24px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <select class="dropdown">
+            <option value="option1">ท่อกลม 01</option>
+            <option value="option2">ท่อเหลี่ยม 02</option>
+            <option value="option3">ท่อเหลี่ยม 03</option>
+            <option value="option4">แป๊บแบน 04</option>
+        </select>
+        <div class="radio-group">
+            <label class="radio-label">
+                <input type="radio" name="option" value="ท่อเหล็กดำ">
+                ท่อเหล็กดำ
+            </label>
+            <label class="radio-label">
+                <input type="radio" name="option" value="ท่อGI">
+                ท่อ GI
+            </label>
+        </div>
+        <div class="radio-group">
+            <label class="radio-label">
+                <input type="radio" name="option2" value="BJ">
+                ท่อ BJ
+            </label>
+            <label class="radio-label">
+                <input type="radio" name="option2" value="BN">
+                ท่อ BN
+            </label>
+        </div>
+        <input type="text" class="text-input" placeholder="จำนวนเส้นของท่อ">
+    </div>
+
+
+</body></html>
