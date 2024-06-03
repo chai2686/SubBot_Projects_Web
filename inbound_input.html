@@ -89,7 +89,7 @@
                 ท่อ BN
             </label>
         </div>
-        <input type="text" class="text-input" placeholder="จำนวนเส้นของท่อ">
+        <input type="number" class="text-input" placeholder="จำนวนเส้นของท่อ" id="quantity">
         <div class="button-group">
             <button onclick="save()" class="button">บันทึก</button>
             <button onclick="clearScreen()" class="button">ล้างจอ</button>
@@ -113,7 +113,39 @@
 			var size = document.getElementById('size').value;
             var nongi = document.getElementById('nongi').checked;
             var bj = document.getElementById('bj').checked;
-			alert(bj);
+            var quantity = document.getElementById('quantity').value;
+            var nongibj = "";
+            var nongibn = "";
+            var gibj = "";
+            var gibn = "";
+            
+            if ( nongi == true) {
+            	if ( bj == true) {
+            		nongibj = nongibj+quantity
+                    alert(size+" เหล็กดำ BJ จำนวน "+ nongibj + " เส้น");
+                    return;
+            	}
+                if ( bj == false) {
+                	nongibn = nongibn+quantity
+                    alert(size+" เหล็กดำ BN จำนวน "+ nongibn + " เส้น");
+            		return;
+                }
+            	return;
+            }
+            if ( nongi == false) {
+            	if ( bj == true) {
+            		gibj = gibj+quantity
+                    alert(size+" เหล็กGI BJ จำนวน "+ gibj + " เส้น");
+                    return;
+            	}
+                if ( bj == false) {
+                	gibn = gibn+quantity
+                    alert(size+" เหล็กGI BN จำนวน "+ gibn + " เส้น");
+            		return;
+                }
+            	return;
+            }
+            
 			}
     </script>
 
