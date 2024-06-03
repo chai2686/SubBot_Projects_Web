@@ -63,15 +63,15 @@
 </head>
 <body>
     <div class="container">
-        <select class="dropdown">
-            <option value="option1">ท่อกลม 01</option>
-            <option value="option2">ท่อเหลี่ยม 02</option>
-            <option value="option3">ท่อเหลี่ยม 03</option>
-            <option value="option4">แป๊บแบน 04</option>
+        <select class="dropdown" id="size">
+            <option value="ท่อกลม 01">ท่อกลม 01</option>
+            <option value="ท่อเหลี่ยม 02">ท่อเหลี่ยม 02</option>
+            <option value="ท่อเหลี่ยม 03">ท่อเหลี่ยม 03</option>
+            <option value="แป๊บแบน 04">แป๊บแบน 04</option>
         </select>
         <div class="radio-group">
-            <label class="radio-label">
-                <input type="radio" name="option" value="ท่อเหล็กดำ">
+            <label class="radio-label" >
+                <input type="radio" name="option" value="ท่อเหล็กดำ" id="nongi">
                 ท่อเหล็กดำ
             </label>
             <label class="radio-label">
@@ -81,7 +81,7 @@
         </div>
         <div class="radio-group">
             <label class="radio-label">
-                <input type="radio" name="option2" value="BJ">
+                <input type="radio" name="option2" value="BJ" id="bj">
                 ท่อ BJ
             </label>
             <label class="radio-label">
@@ -91,7 +91,7 @@
         </div>
         <input type="text" class="text-input" placeholder="จำนวนเส้นของท่อ">
         <div class="button-group">
-            <button class="button">บันทึก</button>
+            <button onclick="save()" class="button">บันทึก</button>
             <button onclick="clearScreen()" class="button">ล้างจอ</button>
             <button class="button">ตารางสรุป</button>
         </div>
@@ -108,6 +108,13 @@
             document.querySelector('.text-input').value = '';
             alert('ล้างหน้าจอสำเร็จ');
         }
+			function save() {
+			//ประกาศตัวแปรในการคำนวณ
+			var size = document.getElementById('size').value;
+            var nongi = document.getElementById('nongi').checked;
+            var bj = document.getElementById('bj').checked;
+			alert(bj);
+			}
     </script>
 
 </body></html>
