@@ -93,7 +93,7 @@
         <div class="button-group">
             <button onclick="save()" class="button">บันทึก</button>
             <button onclick="clearScreen()" class="button">ล้างจอ</button>
-            <button class="button">ตารางสรุป</button>
+            <button onclick="goToReport()" class="button">ตารางสรุป</button>
         </div>
     </div>
     <script>
@@ -108,9 +108,9 @@
             document.querySelector('.text-input').value = '';
             alert('ล้างหน้าจอสำเร็จ');
         }
-			function save() {
-			//ประกาศตัวแปรในการคำนวณ
-			var size = document.getElementById('size').value;
+	function save() {
+            //ประกาศตัวแปรในการคำนวณ
+	    var size = document.getElementById('size').value;
             var nongi = document.getElementById('nongi').checked;
             var bj = document.getElementById('bj').checked;
             var quantity = document.getElementById('quantity').value;
@@ -156,6 +156,9 @@
             }
             
 			}
+	    function goToReport() {
+      window.open("https://docs.google.com/spreadsheets/d/1ZQWOB0mQocpSe2kvMv1MLGFDC5cXy5ZBcn1mXoI-R1g/htmlview", "_blank");
+    	}
     </script>
 
 </body></html>
