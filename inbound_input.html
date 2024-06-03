@@ -27,8 +27,9 @@
         }
         .dropdown {
             width: 300px;
-            height: 100px;
+            height: 50px;
             font-size: 24px;
+            margin-top: 20px;
             margin-bottom: 20px;
         }
         .radio-group {
@@ -41,10 +42,22 @@
         }
         .text-input {
             width: 300px;
-            height: 60px;
+            height: 50px;
             font-size: 24px;
             padding: 10px;
             box-sizing: border-box;
+        }
+        .button-group {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 300px;
+        }
+        .button {
+            width: 200px;
+            height: 40px;
+            font-size: 14px;
+            margin: 10px;
         }
     </style>
 </head>
@@ -77,6 +90,11 @@
             </label>
         </div>
         <input type="text" class="text-input" placeholder="จำนวนเส้นของท่อ">
+        <div class="button-group">
+            <button class="button">บันทึก</button>
+            <button class="button">ล้างจอ</button>
+            <button class="button">ตารางสรุป</button>
+        </div>
     </div>
 
 
