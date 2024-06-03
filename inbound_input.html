@@ -64,10 +64,10 @@
 <body>
     <div class="container">
         <select class="dropdown" id="size">
-            <option value="ท่อกลม 01">ท่อกลม 01</option>
-            <option value="ท่อเหลี่ยม 02">ท่อเหลี่ยม 02</option>
-            <option value="ท่อเหลี่ยม 03">ท่อเหลี่ยม 03</option>
-            <option value="แป๊บแบน 04">แป๊บแบน 04</option>
+            <option value="ท่อกลม_01">ท่อกลม_01</option>
+            <option value="ท่อเหลี่ยม_02">ท่อเหลี่ยม_02</option>
+            <option value="ท่อเหลี่ยม_03">ท่อเหลี่ยม_03</option>
+            <option value="แป๊บแบน_04">แป๊บแบน_04</option>
         </select>
         <div class="radio-group">
             <label class="radio-label" >
@@ -121,10 +121,11 @@
             
             if ( nongi == true) {
             	if ( bj == true) {
+                	var size = document.getElementById('size').value;
             		nongibj = nongibj+quantity;
                     alert(size+" เหล็กดำ BJ จำนวน "+ nongibj + " เส้น");
                     var i = document.createElement("img");
-      i.src = "https://docs.google.com/forms/d/e/1FAIpQLSdhefiFH2nr7zNpTu-jJiIEcloBJK3ZA5PwMqFg972kFapMiw/formResponse?entry.1828759197=" + size + "&entry.1752493080=" + nongibj ;
+      i.src = "https://docs.google.com/forms/d/e/1FAIpQLSdhefiFH2nr7zNpTu-jJiIEcloBJK3ZA5PwMqFg972kFapMiw/formResponse?entry.1828759197=" + size + "&entry.1752493080=" + nongibj + "&entry.972974993=" + "&entry.663803477=" + "&entry.445730425=";
                     return;
             	}
                 if ( bj == false) {
